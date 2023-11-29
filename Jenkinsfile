@@ -10,7 +10,7 @@ pipeline{
             
                     
                 git branch: 'main', url: 'https://github.com/sivachandra422/demo-counter-app.git'
-                
+
             }
         }
 
@@ -23,6 +23,26 @@ pipeline{
             }
 
         }
+
+        stage('Integration Testing'){
+
+            steps{
+
+                sh 'mvn verify -DskipUnitTests'
+
+            }
+
+        }
+
+        stage('Maven Build'{
+
+            steps{
+
+                sh 'mvn clean install'
+
+            }
+
+        })
         
     }
         
