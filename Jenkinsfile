@@ -7,18 +7,19 @@ pipeline{
         stage('Git Checkout'){
             
             steps{
-                
-                script{
+            
                     
-                    git branch: 'main', url: 'https://github.com/sivachandra422/demo-counter-app.git'
-                }
+                git branch: 'main', url: 'https://github.com/sivachandra422/demo-counter-app.git'
+                
             }
         }
 
         stage('Unit Testing'){
             
             steps{
+
                 sh 'mvn test'
+
             }
 
         }
